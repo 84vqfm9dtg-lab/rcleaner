@@ -1,0 +1,61 @@
+version = 1
+
+[[rules]]
+id = "r-target"
+title = "Rust target"
+category = "R 系列构建缓存"
+pattern = "~/Documents/tauri-r*/target"
+description = "R 系列 Tauri 工程的 Rust 构建产物目录。"
+caution = "会删除对应项目的 Rust 构建缓存，下次启动或打包会重新编译。"
+enabled = true
+cleanable = true
+default_selected = false
+risk = "medium"
+
+[[rules]]
+id = "r-dist"
+title = "dist"
+category = "R 系列构建缓存"
+pattern = "~/Documents/tauri-r*/dist"
+description = "R 系列前端构建输出目录。"
+caution = "会删除已生成的前端产物，下次构建会重新生成。"
+enabled = true
+cleanable = true
+default_selected = true
+risk = "low"
+
+[[rules]]
+id = "r-node-modules"
+title = "node_modules"
+category = "R 系列依赖缓存"
+pattern = "~/Documents/tauri-r*/node_modules"
+description = "R 系列项目依赖目录。"
+caution = "清理后需要重新安装依赖，适合长期不使用的项目。"
+enabled = true
+cleanable = true
+default_selected = false
+risk = "medium"
+
+[[rules]]
+id = "r-vite-cache"
+title = "Vite cache"
+category = "R 系列调试文件"
+pattern = "~/Documents/tauri-r*/node_modules/.vite"
+description = "R 系列项目的 Vite 本地缓存。"
+caution = "清理后只会影响下次本地调试启动速度。"
+enabled = true
+cleanable = true
+default_selected = false
+risk = "low"
+
+[[rules]]
+id = "r-debug-log"
+title = "debug log"
+category = "R 系列调试文件"
+pattern = "~/Documents/tauri-r*/npm-debug.log*"
+description = "R 系列项目目录中的 npm 调试日志。"
+caution = "仅删除日志文件，不影响项目本身。"
+enabled = true
+cleanable = true
+default_selected = false
+risk = "low"
